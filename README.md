@@ -1,5 +1,5 @@
 # Groundhog - WIP
- A simple decorator to get notified if there's an issue with your deployed code
+ A simple decorator to get notified if there's an issue with your pre-alpha deployed code
 
 ## TL;DR
 When running pre-alpha stage code, there isn't the time to properly build stable and error-proof code. When deployed (e.g. for concept validation tests in early product discovery), a code failing silently could mean losing valuable data. 
@@ -29,6 +29,7 @@ alan = Groundhog(app_name="Groundhog test")
 
 # register a connector - Slack for example
 CHANNEL = "#sif-testing-slack-bot" # the cannel name where you want to receive the notifications
+SLACK_BOT_TOKEN = "YOUR SLACK BOT TOKEN"
 alan.register_connector(SlackConnector,SLACK_BOT_TOKEN,CHANNEL)
 
 # assign the sentinel to watch this function
