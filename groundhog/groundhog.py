@@ -34,28 +34,3 @@ class Groundhog():
         """
         connector_instance = Connector(*connector_args,**connector_kwargs)
         self.connectors.append(connector_instance)
-
-
-if __name__ == "__main__":        
-    import math
-    from connectors.slack import SlackConnector
-    from keys.slack_bot_key import SLACK_BOT_TOKEN
-    
-    # tell the sentinel what is it that it's watching
-    alan = Groundhog(app_name="Groundhog test")
-    
-    # register a connector - Slack for example
-    CHANNEL = "#sif-testing-slack-bot"
-    alan.register_connector(SlackConnector,SLACK_BOT_TOKEN,CHANNEL)
-
-    # assign the sentinel to watch this function
-    @alan.watch
-    def failable_func(n):
-        """Just a function that could easily fail with the wrong input"""
-        math.sqrt(n)
-
-    # all good!
-    failable_func(4)
-
-    # doesn't look too good...
-    failable_func(-4)

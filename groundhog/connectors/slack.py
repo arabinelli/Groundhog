@@ -2,7 +2,7 @@ from slack import WebClient
 import ssl as ssl_lib
 import certifi
 
-from templates.slack import TemplateErrorNotification
+from ..templates.slack import TemplateErrorNotification
 
 
 class SlackConnector():
