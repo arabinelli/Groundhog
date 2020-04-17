@@ -7,7 +7,13 @@ When running pre-alpha stage code, there isn't the time to properly build stable
 Groundhog provides a framework that can be easily added to existing code and push notifications to channels
 
 ## Install
-Hold on, will be there soon :) 
+Groundhog is not on pypi just yet, but you can install it from Github! 
+
+`pip install git+https://github.com/arabinelli/Groundhog`
+
+Alternatively, clone this repository, move to its root directory and run:
+
+`pip install .`
 
 ## Usage
 
@@ -30,12 +36,11 @@ To run the code below, you'll have to create an app and link it to a workspace s
 ``` python
 import math
 
-#TODO Change this into groundhog.connectors.slack 
-from connectors.slack import SlackConnector
 from groundhog import Groundhog
+from groundhog.connectors.slack import SlackConnector
 
 # tell Alan the groundhog what it's watching
-# Why alan? https://www.youtube.com/watch?v=xaPepCVepCg
+# Why Alan? https://www.youtube.com/watch?v=xaPepCVepCg
 alan = Groundhog(app_name="Groundhog test")
 
 # register a connector - Slack for example
